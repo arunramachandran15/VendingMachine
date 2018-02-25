@@ -1,0 +1,12 @@
+{
+	"connection" : {
+		"client":"postgresql",
+		"host":"sdsdsdsdsds",
+		"user":"wbmpjbgcmhomgv",
+		"password":"sdsdsdlskd",
+		"database":"sdsdsdsd",
+		"charset":"utf8",
+		"port":5432,
+		"ssl":true
+	}
+}

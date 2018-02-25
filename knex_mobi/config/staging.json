@@ -1,0 +1,12 @@
+{
+	"connection" : {
+		"client":"postgresql",
+		"host":"ec2-sdsdsd.compute-1.amazonaws.com",
+		"user":"wbmsdsdsomgv",
+		"password":"H82sd2dsds82-k4AGSMdGO",
+		"database":"ssdsdsdsd",
+		"charset":"utf8",
+		"port":5432,
+		"ssl":true
+	}
+}

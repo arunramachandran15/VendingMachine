@@ -1,0 +1,14 @@
+{
+	"connection" : {
+		"client":"postgresql",
+		"host":"localhost",
+		"database":"example",
+		"charset":"utf8",
+		"user" : "postgres",
+		"password" : "root",
+		"ssl":false
+	},
+	"name": "Mobi",
+	"app_name": "Mobi User Dev",
+	"hostname":"http://localhost:3000"
+}
