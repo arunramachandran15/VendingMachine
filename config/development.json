@@ -1,12 +1,13 @@
 {
 	"connection" : {
 		"client":"postgresql",
-		"host":"localhost",
-		"database":"example",
+		"host":"ec2-54-243-201-19.compute-1.amazonaws.com",
+		"database":"d1tdv99pbmh1eq",
 		"charset":"utf8",
-		"user" : "postgres",
-		"password" : "root",
-		"ssl":false
+		"user" : "wbmpjbgcmhomgv",
+		"port": 5432,
+		"password" : "H8I5zLKzNT1quw82-k4AGSMdGO",
+		"ssl":true
 	},
 	"name": "Mobi",
 	"app_name": "Mobi User Dev",

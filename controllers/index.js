@@ -34,10 +34,11 @@ var self = module.exports = {
 
 		var request = req.body;
 		var shortcode = request.shortcode;
-		var key_code = request.key_code;
+		var key_code = request.shortcode;
 		var req_den = request.denominations;
 
-		var amount_paid = (req_den['50']*50) + (req_den['20']*20) +(req_den['10']*10);
+
+		var amount_paid = (req_den['500']*500) + (req_den['200']*200) + (req_den['50']*50) + (req_den['20']*20) +(req_den['10']*10);
 		request.amount_paid = amount_paid;
 
 		console.log(amount_paid)
@@ -46,31 +47,32 @@ var self = module.exports = {
 			get_product : function(callback)	{
 				models.get_product(key_code,callback)
 			},
-			validation : ['get_product', function(callback, result)	{
+			validation : ['get_product', function(result, callback)	{
 				console.log("get_product")
-				console.log(result.get_product)
+				console.log(callback,result)
 				if(result.get_product.length > 0){
 					var product_price = result.get_product[0].price;
 					var change = amount_paid - product_price;
 					if(change < 0)
 						callback("In sufficient Amount, Giving back the money",null);
 					else{
+						console.log('Next iterations')
 						callback(null,{difference : change})
 					}
 				}else{
 					callback("Given Product Not available",null);
 				}
 			}],
-			get_denominations : ['validation', function(callback, results)	{
+			get_denominations : ['validation', function(results, callback)	{
 
 				var change_amount =  results.validation;
 				models.get_denominations(change_amount,callback);
 
 			}],
-			calculate_change : ['get_denominations', function(callback, results)	{
+			calculate_change : ['get_denominations', function(results, callback)	{
 				self.getChange(results,req,callback);
 			}],
-			do_transaction : ['calculate_change', function(callback, results)	{
+			do_transaction : ['calculate_change', function(results, callback)	{
 				
 				if(results.get_denominations.length>0){
 					db_data = self.getDB_data(results,request);

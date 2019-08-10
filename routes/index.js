@@ -10,7 +10,7 @@ router.get('/list', function(req, res, next) {
  	controller.list(req, res, next);
 });
 
-router.post('/buy_chocolate', function(req, res, next) {
+router.post('/buy', function(req, res, next) {
  	controller.buy_chocolate(req, res, next);
 });
 
